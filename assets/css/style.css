@@ -10,6 +10,10 @@ img {
 }
 
 .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     text-align: center;
     justify-content: center;
@@ -53,9 +57,9 @@ img {
     position: absolute;
     top: 0%;
     height: 100%;
-    width: 100%;
     align-items: end;
     flex-direction: column;
+    margin-left: 11%;
 }
 
 .postionDescription {
@@ -63,6 +67,7 @@ img {
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 100%;
 }
 
 .description {

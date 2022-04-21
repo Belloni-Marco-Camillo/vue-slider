@@ -29,20 +29,49 @@ const app = new Vue({
             }
         ]
     },
+    /*  methods: {
+         prevImage() {
+             console.log('prev img');
+             if (this.activeImage === 0) {
+                 this.activeImage = this.galleria.length
+             }
+             this.activeImage--
+         },
+         nextImage() {
+             console.log('next img');
+             this.activeImage++
+                 if (this.activeImage === this.galleria.length) {
+                     this.activeImage = 0;
+                 }
+         }
+     } */
+
+
+    mounted: function() {
+        this.start();
+    },
     methods: {
         prevImage() {
             console.log('prev img');
             if (this.activeImage === 0) {
-                this.activeImage = this.thumb.image.length
+                this.activeImage = this.galleria.length
             }
-            this.activeImage--
+            this.activeImage--;
         },
         nextImage() {
             console.log('next img');
-            this.activeImage++
-                if (this.activeImage === this.thumb.image.length) {
-                    this.activeImage = 0;
-                }
-        }
-    }
+            this.activeImage++;
+            if (this.activeImage === this.galleria.length) {
+                this.activeImage = 0;
+            }
+        },
+
+
+        start: function() {
+            this.timer = setInterval(this.nextImage, 5000);
+        },
+        stop() {
+            clearInterval(this.timer)
+        },
+    },
 });

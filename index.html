@@ -18,11 +18,14 @@
         <div class="container">
             <div class="row">
                 <div class="card px-0 col-9">
-                    <img width=600px :src="galleria[activeImage].image" alt="galleria[activeImage].title ">
+                    <img width=600px :src="galleria[activeImage].image" @mouseenter="stop" @mouseleave="start" alt="galleria[activeImage].title ">
                     <div class="postionDescription">
                         <h2 class="costumH2">{{galleria[activeImage].title}}</h2>
                         <p class="description">{{galleria[activeImage].text}}</p>
                     </div>
+
+                </div>
+                <div class="thumbnails col-3 px-0">
                     <div class="navigator">
                         <div class="prev" @click="prevImage">
                             <i class="fas fa-chevron-up"></i>
@@ -31,14 +34,11 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                     </div>
-                </div>
-                <div class="thumbnails col-3 px-0">
-                    <img :src="thumb.image" class="thumb" v-for="(thumb, index) in galleria" :class="activeImage === index ? 'active' : '' ">
+                    <img :src="thumb.image" class="thumb" v-for="(thumb, index) in galleria" @mouseenter="stop" @mouseleave="start" :class="activeImage === index ? 'active' : '' ">
                 </div>
             </div>
         </div>
     </div>
-
 
     <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script>
     <script src="./assets/js/app.js"></script>
