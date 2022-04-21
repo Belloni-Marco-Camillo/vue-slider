@@ -33,14 +33,14 @@ const app = new Vue({
         prevImage() {
             console.log('prev img');
             if (this.activeImage === 0) {
-                this.activeImage = this.thumb.length
+                this.activeImage = this.thumb.image.length
             }
             this.activeImage--
         },
         nextImage() {
             console.log('next img');
             this.activeImage++
-                if (this.activeImage === this.thumb.length) {
+                if (this.activeImage === this.thumb.image.length) {
                     this.activeImage = 0;
                 }
         }
